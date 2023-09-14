@@ -1,0 +1,87 @@
+@startuml
+class BillRizer
+class LanceBean 
+class Comando
+class RedFalcon
+class IslasGaluga
+class MachineGun
+class Laser
+class Arma  
+Class Personaje
+{
+    +Avanzar
+    +Brincar
+    +AccionarArma
+    +TomarPotenciador
+}
+Class PanueloRojo
+Class CamisaAzul
+class CajadeArmas
+class CapsulasVoladoras
+class Potenciador 
+class Contenedor
+{
+    +DarArmaPotenciadorRandom
+}
+class AumentoVelocidadDisparo
+class BarreraProtectora
+class Cronometro
+class Partida
+class BaseEnemiga
+Class GloboGigante
+Class Enemigo 
+{
+    +Atacar
+    +Mover
+    +ActivarHabilidadEspecial
+}
+class CabezasGemelas
+Class Plataforma
+Class Vidas
+class Usuario
+{
+    +SeleccionarPersonaje
+    +AbrirMenu
+}
+class Monedas
+class Mapa
+
+
+
+'Es un' 
+BillRizer --|> Comando 
+LanceBean --|> Comando
+Comando --|> Personaje
+MachineGun --|> Arma
+Laser --|> Arma
+GloboGigante --|> Enemigo
+CabezasGemelas --|> Enemigo
+RedFalcon --|> Enemigo
+CajadeArmas --|> Contenedor
+CapsulasVoladoras --|> Contenedor
+AumentoVelocidadDisparo --|> Potenciador
+BarreraProtectora --|> Potenciador
+IslasGaluga --|> Mapa
+
+'Tiene'
+BillRizer *-- CamisaAzul
+LanceBean *-- PanueloRojo
+Contenedor *-- Potenciador
+Contenedor *-- Arma
+Partida *-- Cronometro
+Partida *-- Personaje
+BaseEnemiga *-- Enemigo
+Mapa *-- BaseEnemiga
+Mapa *-- Enemigo
+Mapa *-- Monedas
+Mapa *-- Contenedor
+
+
+'Usa'
+Usuario o-- Personaje
+Enemigo o-- Arma
+Personaje o-- Monedas
+Personaje o-- Contenedor
+Personaje o-- Plataforma
+Personaje o-- Vidas
+@enduml

@@ -10,8 +10,8 @@ int main(int argc, char const *argv[])
     m1.jugar();
     m1.jugar();
 
-    std::cout << m1.DecirNombre() << "tiene"
-              << m1.DecirHambre() << "de hambre.";
+    std::cout << m1.DecirNombre() << " tiene "
+              << m1.DecirHambre() << " de hambre.";
 
     m1.comer(5);
 
