@@ -1,19 +1,58 @@
-#include <iostream>
-#include <Mascota.hpp>
+#include <Ventana.hpp>
+#include <Dibujo.hpp>
+#include <curses.h>
+#include <unistd.h>
+#include <BillRizer.hpp>
+#include <IslasGaluga.hpp>
+
+using namespace std;
 
 int main(int argc, char const *argv[])
 {
-    std::cout << "Juego de mascotas" << std::endl;
+    Ventana v;
+    Dibujo d1(25, 18, "billrizer");
+    Dibujo e1(0,32,"pasto1");
+    Dibujo e2(100,23,"pasto2");
+    Dibujo e3(100,33,"pasto2");
 
-    Mascota m1("Heidy");
-    m1.jugar();
-    m1.jugar();
-    m1.jugar();
+    bool ejecucion = true;
+    while (ejecucion)
+    {
+        v.Actualizar();
+        if (getch() == 'q')
+        {
+            ejecucion = false;
+        }
+        if (getch() == 'd')
+        {
+            d1.AvanzarX(4);
+        }
+        if (getch() == 'a')
+        {
+            d1.RetrocederX(4);
+        }
+        if (getch() == 's')
+        {
+            d1.BajarY(3);
+        }
+        if (getch() == 'w')
+        {
+            d1.SubirY(3);
+        }
+        // ciclo de dibujo
+        clear();
+        // v.Dibujar();
+        
+        e1.Dibujar();
+        e2.Dibujar();
+        e3.Dibujar();
+        d1.Dibujar();
+        
 
-    std::cout << m1.DecirNombre() << " tiene "
-              << m1.DecirHambre() << " de hambre.";
 
-    m1.comer(5);
+        refresh();
+        usleep(41000);
+    }  
 
     return 0;
 }
