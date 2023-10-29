@@ -14,10 +14,11 @@ private:
     bool ejecucion;
     int velocidad;
     int contador;
+
 public:
-    Ventana(/* args */) 
+    Ventana(/* args */)
     {
-     initscr();
+        initscr();
         getmaxyx(stdscr, this->y, this->x);
         this->ejecucion = false;
         this->velocidad = 10;
@@ -26,7 +27,7 @@ public:
         cbreak();
         timeout(100);
         noecho();
-        keypad(stdscr, TRUE);   
+        keypad(stdscr, TRUE);
     }
 
     void Actualizar()
@@ -45,7 +46,7 @@ public:
     {
         this->ejecucion = false;
     }
-    ~Ventana() 
+    ~Ventana()
     {
         endwin();
     }

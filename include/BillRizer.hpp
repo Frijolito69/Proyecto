@@ -6,7 +6,8 @@ private:
     /* data */
 public:
     BillRizer(/* args */) : Dibujo("billrizer")
-    {}
+    {
+    }
     ~BillRizer() {}
     void Actualizar()
     {

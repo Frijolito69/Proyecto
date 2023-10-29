@@ -12,13 +12,14 @@ private:
     int y;
     fstream archivo;
     string recurso;
+
 public:
-    Dibujo(int x, int y, string recurso) 
+    Dibujo(int x, int y, string recurso)
     {
         this->recurso = recurso;
         archivo.open("./data/" + this->recurso + ".txt");
         this->x = x;
-        this->y = y; 
+        this->y = y;
     }
     Dibujo(string recurso)
     {
@@ -60,7 +61,8 @@ public:
         archivo.clear();
         archivo.seekg(0);
     }
-    ~Dibujo() {
+    ~Dibujo()
+    {
         archivo.close();
     }
 };
